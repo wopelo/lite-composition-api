@@ -1,4 +1,4 @@
-import { reactive, effect } from './reactivity/index.js'
+import { reactive, effect, ref } from './reactivity/index.js'
 
 const obj = reactive({
   name: '特朗普',
@@ -7,14 +7,17 @@ const obj = reactive({
   },
 })
 
+const age = ref(10)
+
 let news = ''
 
 effect(() => {
-  news = `${obj.name} 说 ${obj.info.message}`
+  news = `${age.value} 岁的 ${obj.name} 说 ${obj.info.message}`
 })
 
 setTimeout(() => {
   obj.name = '懂王'
+  age.value = 80
   console.log('news', news)
 }, 2000)
 

@@ -1,13 +1,13 @@
 import { track, trigger } from './effect.js'
 
 // 判断val是否是对象
-const isObject = (val) => val !== null && typeof val === 'object'
+export const isObject = (val) => val !== null && typeof val === 'object'
 
 // 递归处理
-const convert = (target) => (isObject(target) ? reactive(target) : target)
+export const convert = (target) => (isObject(target) ? reactive(target) : target)
  
 // 判断对象是否存在key属性
-const hasOwn = (target, key) => Object.prototype.hasOwnProperty.call(target, key)
+export const hasOwn = (target, key) => Object.prototype.hasOwnProperty.call(target, key)
  
 export function reactive(target) {
   // 不是对象，直接返回
