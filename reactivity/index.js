@@ -1,3 +1,5 @@
 export { reactive } from './reactive.js'
 export { effect } from './effect.js'
 export { ref } from './ref.js'
+export { toRefs } from './toRefs.js'
+export { computed } from './computed.js'
