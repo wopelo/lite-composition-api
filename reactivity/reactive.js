@@ -18,7 +18,7 @@ export function reactive(target) {
       // 收集依赖
       track(target, key)
 
-      console.log('get', target, key)
+      // console.log('get', target, key)
 
       // 如果key对应的值也是对象，需要再将其转换为响应式对象，用于递归收集下一级的依赖
       return convert(Reflect.get(target, key, receiver))
@@ -29,7 +29,7 @@ export function reactive(target) {
       let result = true
 
       if (oldVal !== value) {
-        console.log('set', target, key, value)
+        // console.log('set', target, key, value)
 
         result = Reflect.set(target, key, value, receiver)
 

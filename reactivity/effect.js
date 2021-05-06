@@ -39,7 +39,7 @@ export function track(target, key) {
   // 添加 effect 回调函数
   dep.add(activeEffect)
 
-  console.log('targetMap', targetMap)
+  // console.log('targetMap', targetMap)
 }
 
 // 触发更新
