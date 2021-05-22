@@ -10,7 +10,6 @@ export function ref(raw) {
   let value = convert(raw)
 
   const r = {
-    __v_isRef: true, // 标识，表示该对象是 ref 创建的
     get value() {
       track(r, 'value')
 
