@@ -1,4 +1,4 @@
-// 当前活动的 effect 函数
+// 当前消费可响应对象属性的回调函数
 let activeEffect = null
 
 export function effect(callback) {
@@ -13,7 +13,7 @@ export function effect(callback) {
 }
 
 // 依赖列表，key是对象，value是map
-// value的key的属性，value是set，里面是各个地方收集到的回调
+// map的key的属性，value是set，里面是各个地方收集到的回调
 let targetMap = new WeakMap()
 
 // 收集依赖
